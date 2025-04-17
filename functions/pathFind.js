@@ -97,7 +97,7 @@ const heuristic = (a, b) => {
     return [];
   };
   
-  exports.handler = async (event, context) => {
+  module.exports.handler = async (event, context) => {
     if (event.httpMethod !== "POST") {
       return {
         statusCode: 405,
@@ -106,12 +106,12 @@ const heuristic = (a, b) => {
     }
   
     try {
-      const { start, goal, network, mode } = JSON.parse(event.body);
+      const { start, goal, mode } = JSON.parse(event.body);
   
-      if (!start || !goal || !network || !mode) {
+      if (!start || !goal || !mode) {
         return {
           statusCode: 400,
-          body: JSON.stringify({ error: "Missing required parameters: start, goal, network, mode" }),
+          body: JSON.stringify({ error: "Missing required parameters: start, goal, mode" }),
         };
       }
   
