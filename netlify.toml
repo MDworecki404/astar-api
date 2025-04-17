@@ -1,3 +1,8 @@
 [build]
-    functions = "functions"
-    publish = "public"
+  functions = "functions"
+  publish = "."  # albo nie ustawiaj tego wcale, jeśli nie masz frontendowego kodu
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
