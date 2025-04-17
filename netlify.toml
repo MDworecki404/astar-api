@@ -1,6 +1,5 @@
 [build]
   functions = "functions"
-  publish = "."  # albo nie ustawiaj tego wcale, jeśli nie masz frontendowego kodu
 
 [[redirects]]
   from = "/api/*"
